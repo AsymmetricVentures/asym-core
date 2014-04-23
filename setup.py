@@ -34,7 +34,7 @@ Topic :: Software Development :: Libraries :: Application Frameworks
 setup(
 	name = 'asymmetricbase.core',
 	version = datetime.now().strftime('%Y%m%d%H%M'),
-	url = 'https://github.com/AsymmetricVentures/asymmetricbase',
+	url = 'https://github.com/AsymmetricVentures/asym-core',
 	
 	author = 'Richard Eames',
 	author_email = 'reames@asymmetricventures.com',
@@ -56,7 +56,12 @@ setup(
 		'asymmetricbase.forms',
 		'asymmetricbase.testing',
 	),
-	
+	dependency_links = [
+		'https://github.com/AsymmetricVentures/asym-fields.git#egg=asymmetricbase.fields',
+		'https://github.com/AsymmetricVentures/asym-logging.git#egg=asymmetricbase.logging',
+		'https://github.com/AsymmetricVentures/asym-testing.git#egg=asymmetricbase.testing',
+		'https://github.com/AsymmetricVentures/asym-forms.git#egg=asymmetricbase.forms',
+	],
 	package_dir = {
 		'asymmetricbase' : 	'asymmetricbase',
 	},

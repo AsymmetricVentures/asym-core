@@ -22,8 +22,8 @@ try:
 except ImportError:
 	AppConfig = object
 
-from .utils import monkey_patching as util_monkey
-from .jinja import monkey_patching as jinja_monkey
+from asymmetricbase.utils import monkey_patching as util_monkey
+from asymmetricbase.jinja import monkey_patching as jinja_monkey
 
 class AsymmetricAppConfig(AppConfig):
 	name = 'asymmetricbase'
