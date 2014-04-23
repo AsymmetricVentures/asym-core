@@ -31,16 +31,22 @@ License :: OSI Approved :: GNU General Public License v2 (GPLv2)
 Topic :: Software Development :: Libraries :: Application Frameworks
 """
 
+version = '0.1.0'
+url = 'https://github.com/AsymmetricVentures/asym-core'
+
 setup(
 	name = 'asymmetricbase.core',
-	version = datetime.now().strftime('%Y%m%d%H%M'),
-	url = 'https://github.com/AsymmetricVentures/asym-core',
-	
+	version = '{}-{}'.format(version, datetime.now().strftime('%Y%m%d%H%M')),
+	url = url,
+	download_url = '{}/archive/v{}.tar.gz'.format(url, version),
 	author = 'Richard Eames',
 	author_email = 'reames@asymmetricventures.com',
 	packages = find_packages(),
-	classifiers = filter(None, classifiers.split('\n')),
+	classifiers = list(filter(None, classifiers.split('\n'))),
 	namespace_packages = ['asymmetricbase'],
+	
+	license = 'GPLv2',
+	description = 'Core utilities for Asymmeric Base Framework',
 	
 	install_requires = (
 		'django>=1.4.5',
@@ -57,10 +63,10 @@ setup(
 		'asymmetricbase.testing',
 	),
 	dependency_links = [
-		'https://github.com/AsymmetricVentures/asym-fields.git#egg=asymmetricbase.fields',
-		'https://github.com/AsymmetricVentures/asym-logging.git#egg=asymmetricbase.logging',
-		'https://github.com/AsymmetricVentures/asym-testing.git#egg=asymmetricbase.testing',
-		'https://github.com/AsymmetricVentures/asym-forms.git#egg=asymmetricbase.forms',
+		'https://github.com/AsymmetricVentures/asym-fields.git#egg=asymmetricbase.fields-dev',
+		'https://github.com/AsymmetricVentures/asym-logging.git#egg=asymmetricbase.logging-dev',
+		'https://github.com/AsymmetricVentures/asym-testing.git#egg=asymmetricbase.testing-dev',
+		'https://github.com/AsymmetricVentures/asym-forms.git#egg=asymmetricbase.forms-dev',
 	],
 	package_dir = {
 		'asymmetricbase' : 	'asymmetricbase',
