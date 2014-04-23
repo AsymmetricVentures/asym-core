@@ -26,13 +26,12 @@ from django.contrib.contenttypes.models import ContentType
 
 from asymmetricbase.logging import audit_logger
 from asymmetricbase.logging.models import LogEntryType, AccessType
-from asymmetricbase.fields import UUIDField
+from asymmetricbase.fields.uuidfield import UUIDField
 
 class AsymBaseModel(models.Model):
 	# The next two lines for for eclipse so that it stops reporting _meta as unknown
 	_meta = models.options.Options
 	del _meta
-	
 	
 	uuid = UUIDField()
 	date_created = models.DateTimeField(auto_now_add = True, default = timezone.now)
